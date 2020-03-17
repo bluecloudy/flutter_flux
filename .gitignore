@@ -16,3 +16,4 @@ dartdoc-viewer/
 
 # coverage
 /coverage/
+example/ios/Flutter/flutter_export_environment.sh

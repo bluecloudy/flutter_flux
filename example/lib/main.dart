@@ -31,7 +31,7 @@ class ChatScreen extends StatefulWidget {
 // 4. Use the information from your store(s) in your build() function.
 
 class ChatScreenState extends State<ChatScreen>
-    with StoreWatcherMixin<ChatScreen> {
+    with StoreWatcherMixin<ChatScreen>, ActionWatcherMixin {
   // Never write to these stores directly. Use Actions.
   ChatMessageStore messageStore;
   ChatUserStore chatUserStore;
@@ -61,7 +61,7 @@ class ChatScreenState extends State<ChatScreen>
   void handleChatMessageStoreChanged(Store store) {
     ChatMessageStore messageStore = store;
     if (messageStore.currentMessage.isEmpty) {
-        msgController.clear();
+      msgController.clear();
     }
     setState(() {});
   }

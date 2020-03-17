@@ -4,8 +4,8 @@
 
 import 'dart:math' show Random;
 
-import 'package:flutter/material.dart';
-import 'package:flutter_flux/flutter_flux.dart';
+import 'package:flutter/material.dart' show Color, Colors;
+import 'package:flutter_flux/flutter_flux.dart' show Action, Store, StoreToken;
 
 class ChatUser {
   ChatUser({this.name, this.color});
@@ -58,5 +58,5 @@ class ChatUserStore extends Store {
 final StoreToken messageStoreToken = new StoreToken(new ChatMessageStore());
 final StoreToken userStoreToken = new StoreToken(new ChatUserStore());
 
-final Action<String> setCurrentMessageAction = new Action<String>();
-final Action<ChatUser> commitCurrentMessageAction = new Action<ChatUser>();
+final setCurrentMessageAction = new Action<String>();
+final commitCurrentMessageAction = new Action<ChatUser>();
